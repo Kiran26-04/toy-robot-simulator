@@ -2,8 +2,8 @@ from enum import Enum
 
 class Facing(Enum): # have to follow an order (currently clockwise)
     NORTH = 0
-    SOUTH = 2
     EAST = 1
+    SOUTH = 2
     WEST = 3
 
 class Robot:
@@ -15,11 +15,11 @@ class Robot:
         self.width = width
         self.height = height
     
-    def validPosition(self, x, y):
+    def valid_position(self, x, y):
         return 0 <= x < self.width and 0 <= y < self.height
     
     def place(self, x, y, direction): #only places if the position is valid
-        if self.validPosition(x, y) and direction in Facing:
+        if self.valid_position(x, y) and direction in Facing:
             self.x = x
             self.y = y
             self.direction = direction
@@ -39,7 +39,7 @@ class Robot:
         elif self.direction == Facing.WEST:
             new_x -=1
         
-        if self.validPosition(new_x, new_y):
+        if self.valid_position(new_x, new_y):
             self.x = new_x      #updating the final position
             self.y = new_y
     
@@ -53,7 +53,7 @@ class Robot:
     
     def report(self):
         if self.placed:
-            return print(f'{self.x},{self.y},{self.direction}')
+            return f'{self.x},{self.y},{self.direction}'
         print('Oops! Robot needs to be placed first to report the position. Use the PLACE command first')
         return None
     
