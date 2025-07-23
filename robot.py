@@ -24,6 +24,8 @@ class Robot:
             self.y = y
             self.direction = direction
             self.placed = True
+        else:
+            print('Command ignored!')
     
     def move(self): #moves 1 unit forward + moves only if the position after that 1 unit is valid
         if not self.placed:
@@ -42,18 +44,27 @@ class Robot:
         if self.valid_position(new_x, new_y):
             self.x = new_x      #updating the final position
             self.y = new_y
+        else:
+            print('Command ignored!')
     
     def left(self):
         if self.placed:
             self.direction = Facing((self.direction.value-1)%4)
+        else:
+            print("Oops! Robot hasn't been placed yet. Use the PLACE command first")
+            return
+
     
     def right(self):
         if self.placed:
             self.direction = Facing((self.direction.value+1)%4)
+        else:
+            print("Oops! Robot hasn't been placed yet. Use the PLACE command first")
+            return
     
     def report(self):
         if self.placed:
-            return f'{self.x},{self.y},{self.direction}'
+            return f'{self.x},{self.y},{self.direction.name}'
         print('Oops! Robot needs to be placed first to report the position. Use the PLACE command first')
         return None
     
