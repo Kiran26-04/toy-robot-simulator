@@ -66,7 +66,7 @@ Expected output: 3,3,NORTH
 
 
 ## SETUP:
-1. Cloning the repository : [text](https://github.com/Kiran26-04/toy-robot-simulator.git)
+1. Cloning the repository : (https://github.com/Kiran26-04/toy-robot-simulator.git)
 2. Enter the simulator directory : cd Toy\ Robot\ Challenge/
 3. Install test dependency : pip install pytest
 
