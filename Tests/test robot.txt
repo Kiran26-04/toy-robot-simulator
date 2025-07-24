@@ -1,0 +1,12 @@
+Some manual testing scenarios for the Toy Robot Simulator.
+
+Below are the test scenarios for various commands as input along with the expected outputs.
+
+--------
+
+Test Case 1: Custom Grid Size (User enters the grid size as 6x6 when prompted)
+    PLACE 5,5,SOUTH
+    MOVE
+    REPORT
+
+    Expected Output: 5,4,SOUTH

@@ -18,7 +18,7 @@ class Robot:
     def valid_position(self, x, y):
         return 0 <= x < self.width and 0 <= y < self.height
     
-    def place(self, x, y, direction): #only places if the position is valid
+    def place(self, x, y, direction): # only places if the position is valid
         if self.valid_position(x, y) and direction in Facing:
             self.x = x
             self.y = y
