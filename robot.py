@@ -25,11 +25,11 @@ class Robot:
             self.direction = direction
             self.placed = True
         else:
-            print('Command ignored!')
+            print('PLACE command ignored since robot will go out of bounds! Try again')
     
-    def move(self): #moves 1 unit forward + moves only if the position after that 1 unit is valid
+    def move(self): # moves 1 unit forward + moves only if the position after that 1 unit is valid
         if not self.placed:
-            print("Oops! Robot hasn't been placed yet. Use the PLACE command first")
+            print("Oops! Robot hasn't been placed yet. Use the PLACE command first! Try again")
             return
         new_x, new_y = self.x, self.y
         if self.direction == Facing.NORTH:
@@ -42,16 +42,16 @@ class Robot:
             new_x -=1
         
         if self.valid_position(new_x, new_y):
-            self.x = new_x      #updating the final position
+            self.x = new_x      # updating the final position
             self.y = new_y
         else:
-            print('Command ignored!')
+            print('Command ignored since the robot will fall off the edge after that move! Try again')
     
     def left(self):
         if self.placed:
             self.direction = Facing((self.direction.value-1)%4)
         else:
-            print("Oops! Robot hasn't been placed yet. Use the PLACE command first")
+            print("Oops! Robot hasn't been placed yet. Use the PLACE command first!")
             return
 
     
@@ -59,12 +59,12 @@ class Robot:
         if self.placed:
             self.direction = Facing((self.direction.value+1)%4)
         else:
-            print("Oops! Robot hasn't been placed yet. Use the PLACE command first")
+            print("Oops! Robot hasn't been placed yet. Use the PLACE command first!")
             return
     
     def report(self):
         if self.placed:
             return f'{self.x},{self.y},{self.direction.name}'
-        print('Oops! Robot needs to be placed first to report the position. Use the PLACE command first')
+        print('Oops! Robot needs to be placed first to report the position. Use the PLACE command first!')
         return None
     

@@ -10,3 +10,62 @@ Test Case 1: Custom Grid Size (User enters the grid size as 6x6 when prompted)
     REPORT
 
     Expected Output: 5,4,SOUTH
+
+Test Case 2: Replacing PLACE command after PLACE command
+    PLACE 1,1,NORTH
+    MOVE
+    PLACE 3,3,WEST
+    REPORT
+
+    Expected Output: 3,3,WEST
+
+Test Case 3: Out of bounds prevention when MOVE is used
+    PLACE 4,4,NORTH
+    MOVE
+    REPORT
+
+    Expected Output: 4,4,NORTH (also prints an error message for the user.)
+
+Test Case 4: Invalid PLACE command (Out of bounds when grid size is 5x5) 
+    PLACE 6,6,NORTH
+    REPORT
+
+    Expected Output: PLACE command ignored since robot will go out of bounds! Try again
+
+Test Case 5: Commands before PLACE
+    MOVE
+
+    Expected Output: Oops! Robot hasn't been placed yet. Use the PLACE command first! Try again
+
+Test Case 6: Forward move
+    PLACE 0,0,NORTH
+    MOVE
+    REPORT
+
+    Expected Output: 0,1,NORTH
+
+Test Case 7: Turning left
+    PLACE 1,1,EAST
+    MOVE
+    MOVE
+    LEFT
+    MOVE
+    REPORT
+
+    Expected Output: 3,2,NORTH
+
+Test Case 8: Turning right
+    PLACE 3,3,WEST
+    MOVE
+    RIGHT
+    MOVE
+    REPORT
+
+    Expected Output: 2,4,NORTH
+
+Test Case 9: Unknown commands ignored
+    PLACE 1,2,SOUTH
+    MOVE
+    KILL
+
+    Expected Output: The following command does not exist. Choose from PLACE, MOVE, RIGHT, LEFT, REPORT. Try again!

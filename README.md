@@ -60,4 +60,26 @@ Expected output: 0,0,WEST
 
 Expected output: 3,3,NORTH
 
+## Requirements:
+* Python 3.7+
+* pytest (for running the tests)
+
+
 ## SETUP:
+1. Cloning the repository : [text](https://github.com/Kiran26-04/toy-robot-simulator.git)
+2. Enter the simulator directory : cd Toy\ Robot\ Challenge/
+3. Install test dependency : pip install pytest
+
+## RUNNING THE SIMULATOR:
+* Just run - python main.py
+* Welcome message shows and you'll be prompted to enter the grid size - the width and the height
+* Begin entering commands after the '>>>> ' (PLACE being the first command) - 
+    PLACE 1,1,NORTH
+    MOVE
+    REPORT
+* Enter EXIT to quit the simulator.
+* Casing of the commands is being handled.
+
+## TESTING:
+* Just run - pytest
+* Refer to test_robot.txt for manually testable command sequences and expected outputs.
